@@ -16,7 +16,8 @@ register_source(
     word_pattern=r'\w+',
     scoping=True,
     scopes=['java'],
-    early_cache=1 cm_refresh_patterns=[r'\.'],
+    early_cache=1,
+    cm_refresh_patterns=[r'\.'],
 )
 
 
