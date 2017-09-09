@@ -87,10 +87,13 @@ class Source(Base):
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.DEVNULL)
         result, errs = proc.communicate(timeout=30)
-        # os.remove(temp_path)
 
         logger.debug("args: %s, result: [%s]", args, result.decode())
 
         items = json.loads(result.decode('utf-8'))['completions']
-        items = [dict(item, word=item['completion']) for item in items]
+        items = [dict(
+            item,
+            word=item['completion'],
+            menu=item['menu'].replace(item['completion'] + ' : ', ''),
+        ) for item in items]
         self.complete(info, ctx, ctx['startcol'], items)
