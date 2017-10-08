@@ -6,7 +6,7 @@ based on eclim
 
 ## Requirements
 
-- Install and config [eclim](http://eclim.org)
+- Install and config [eclim](http://eclim.org) (It's required to complete the steps in eclim docs, pinging eclim daemon is not enough, you should import/create eclipse project in eclim's workspace, etc)
 
 
 ## vimrc example
